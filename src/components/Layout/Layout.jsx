@@ -1,33 +1,18 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import Footer from 'components/Footer/Footer';
+import Header from 'components/Header/Header';
+import Main from 'components/Main/Main';
+import { Outlet } from 'react-router-dom';
+import { LayoutStyled } from './Layout.styled';
 
 const Layout = () => {
   return (
-    <>
-      <header>
-        <ul>
-          <li>
-            <NavLink to="/">Главная</NavLink>
-          </li>
-          <li>
-            <NavLink to="calculator">Калькулятор</NavLink>
-          </li>
-          <li>
-            <NavLink to="about">О нас</NavLink>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <NavLink to="register">Регистрация</NavLink>
-          </li>
-          <li>
-            <NavLink to="login">Авторизация</NavLink>
-          </li>
-        </ul>
-      </header>
-      <main>
+    <LayoutStyled>
+      <Header />
+      <Main>
         <Outlet />
-      </main>
-    </>
+      </Main>
+      <Footer />
+    </LayoutStyled>
   );
 };
 
